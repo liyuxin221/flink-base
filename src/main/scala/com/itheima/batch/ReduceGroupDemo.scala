@@ -13,6 +13,7 @@ object ReduceGroupDemo {
     )
     val groupedDataSet: GroupedDataSet[(String, Int)] = source.groupBy(0)
 
+
     val result: DataSet[(String, Int)] = groupedDataSet.reduce {
       (t1, t2) =>
         (t1._1, t1._2 + t2._2)
